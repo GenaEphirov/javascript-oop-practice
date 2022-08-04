@@ -66,9 +66,41 @@ class Book {
   set bookTitle(value) {this.title = value}
 }
 
-let myFavBook = new Book('Мастер и Маргарита', 'М.А.Булгаков', 2000)
-console.log(myFavBook.title)
-console.log(myFavBook.bookTitle)
-myFavBook.bookTitle = 'Белая гвардия'
-console.log(myFavBook.title)
-console.log(myFavBook.bookTitle)
+class Account {
+  constructor(id, username, friends) {
+    this._id = id;
+    this._username = username;
+    this._friends = friends;
+  }
+  set id(value) {
+    this._id = value;
+  }
+  get id() {
+    return this._id
+  }
+  set username(value) {
+    if (value.length > 4) {
+      this._username = value
+    } else {
+      console.log('Operation failed (username must contain at least 4 letters)') 
+    }
+  }
+  get username() {
+    return this._username
+  }
+  set friends(value) {
+    this._friends.push(value)
+  }
+  get friends() {
+    return this._friends
+  }
+}
+
+Andrey = new Account(4, 'andrey', [])
+
+Andrey.friends = {username: 'Vasya', id: 3}
+Andrey.friends = {username: 'Petya', id: 2}
+
+console.log(Andrey.id);
+console.log(Andrey.username);
+console.log(Andrey.friends);
