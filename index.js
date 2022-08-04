@@ -111,4 +111,30 @@ const test = {
   }
 }
 
-test.someMethod()
+const performFunction = (func) => {
+  return func()
+}
+performFunction(test.someMethod.bind(test))
+
+// ||||||||||
+// \/\/\/\/\/
+function partial(func, ...argsBound) {
+  return function(...args) {
+    return func.call(this, ...argsBound, ...args);
+  }
+}
+// /\/\/\/\/\/\
+// ||||||||||||
+const askPassword = (f1, f2) => {
+  f2()
+}
+let user = {
+  name: 'John',
+
+  login(result) {
+    alert( this.name + (result ? ' logged in' : ' failed to log in') );
+  }
+};
+
+// askPassword(() => user.login(true), () => (user.login(false)));
+// askPassword(user.login.bind(user, true), user.login.bind(user, false))
