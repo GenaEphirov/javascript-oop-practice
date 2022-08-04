@@ -101,6 +101,14 @@ Andrey = new Account(4, 'andrey', [])
 Andrey.friends = {username: 'Vasya', id: 3}
 Andrey.friends = {username: 'Petya', id: 2}
 
-console.log(Andrey.id);
-console.log(Andrey.username);
-console.log(Andrey.friends);
+const test = {
+  _title: 'War never changes',
+  someMethod() {
+    let someVar = {
+      title: this._title
+    }
+    console.log(someVar.title)
+  }
+}
+
+test.someMethod()
