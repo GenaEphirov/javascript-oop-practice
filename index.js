@@ -138,3 +138,15 @@ let user = {
 
 // askPassword(() => user.login(true), () => (user.login(false)));
 // askPassword(user.login.bind(user, true), user.login.bind(user, false))
+function testingFunction() {
+  console.log('hello, world!')
+}
+let str = 'im a string'
+let num = 100
+let testingObject = {
+  testingFunction,
+  str,
+  num,
+}
+
+console.log(Object.entries(testingObject))
