@@ -153,13 +153,3 @@
 // }
 
 // console.log(Object.entries(testingObject))
-
-function something({}) {
-  return;
-}
-
-console.log(something(123));
-console.log(something("string"));
-console.log(something(["Hello, world", 1024]));
-console.log(something({boo: 'foo', fool: 'nope'}));
-console.log(something(() => 'arrow func'));
