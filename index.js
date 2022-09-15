@@ -153,3 +153,19 @@
 // }
 
 // console.log(Object.entries(testingObject))
+
+// const getName = document.getElementById('GET-name');
+// getName.addEventListener('click', (event) => {
+//   console.log(event.target);
+//   console.log(event.eventPhase);
+//   console.log(event.currentTarget);
+//   alert('data already in console')
+// });
+// getName.addEventListener('click', (event) => {
+//   console.log('second event listener');
+// });
+
+const wtfFunc = (arg) => {
+  return {arg}
+}
+console.log(wtfFunc('key'))
