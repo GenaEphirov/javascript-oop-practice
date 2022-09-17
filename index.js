@@ -164,8 +164,10 @@
 // getName.addEventListener('click', (event) => {
 //   console.log('second event listener');
 // });
-
-const wtfFunc = (arg) => {
-  return {arg}
+const checkUndefined = (arg = 100) => {
+  console.log(arg);
 }
-console.log(wtfFunc('key'))
+
+checkUndefined(50);
+checkUndefined();
+checkUndefined(undefined);
