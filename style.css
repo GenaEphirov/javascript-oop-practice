@@ -1,3 +1,5 @@
-h1, h2 {
-  font-family: Lato;
+div {
+  background: linear-gradient(90deg, #333 50%, transparent 0) repeat-x;
+  background-size: 4px 1px;
+  background-position: 0 0;
 }
