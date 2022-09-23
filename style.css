@@ -1,5 +1,80 @@
-div {
-  background: linear-gradient(90deg, #333 50%, transparent 0) repeat-x;
-  background-size: 4px 1px;
-  background-position: 0 0;
+body {
+  width: 900px;
+  display: flex;
+}
+
+.border1 {
+  width: 100px;
+  height: 100px;
+  background: 
+    linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+    linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+    linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+    linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+  background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+}
+
+.border2 {
+  width: 100px;
+  height: 100px;
+  background: 
+    linear-gradient(90deg, #333, #333) repeat-x,
+    linear-gradient(90deg, #333, #333) repeat-x,
+    linear-gradient(0deg, #333, #333) repeat-y,
+    linear-gradient(0deg, #333, #333) repeat-y;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  background-size: 1px 1px, 1px 1px, 1px 1px, 1px 1px;
+}
+
+.border2:hover {
+  border: none;
+  background: 
+    linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+    linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+    linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+    linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+  background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  animation: borderMove .3s infinite linear;
+}
+
+.border1:hover {
+  animation: borderMove .3s infinite linear;
+}
+
+.box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+.box:hover {
+  animation: box 6s infinite linear;
+}
+
+@keyframes borderMove {
+  100% {
+    background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+  }
+}
+
+@keyframes border2Move {
+  50% {
+    background-size: 2px 1px, 2px 1px, 1px 2px, 1px 2px;
+  }
+  75% {
+    background-size: 3px 1px, 3px 1px, 1px 3px, 1px 3px;
+  }
+  100% {
+    background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
+    background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+  }
+}
+
+@keyframes box {
+  0% {left: 0; }
+  50% {left: 300px; }
+  100% {left: 0; }
 }
